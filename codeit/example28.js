@@ -1,18 +1,12 @@
-// 아래에 adultTag, teenagerTag, errorTag, transferTag라는 변수들을 작성해 주세요.
-const adultTag = "삑!";
-const teenagerTag = "삑삑!";
-const transferTag = "환승입니다.";
-const errorTag = "삑삑삑!";
+// if문 (if statement)
+// if (조건부분) {
+//     동작부분
+// }
 
+let temperature = 1;
 
-// 아래에 tagCase파라미터를 가지는 tagNotification 함수를 작성해 주세요.
-const tagNotification = tagCase => {
-    console.log(tagCase);
+if (temperature <= 0) {
+    console.log('물이 업니다.');
+} else {
+    console.log('물이 얼지 않습니다.');
 }
-
-// 테스트 코드
-tagNotification(adultTag);
-tagNotification(teenagerTag);
-tagNotification(transferTag);
-tagNotification(errorTag);
-tagNotification(adultTag);
