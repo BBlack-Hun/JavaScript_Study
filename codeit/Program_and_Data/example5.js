@@ -27,7 +27,7 @@ let rectAngle = {
 let triAngle = {
 	width :15,
 	height: 40,
-	getArea: function {
+	getArea: function() {
 		return triAngle.width * triAngle.height / 2;
 	}
 }
