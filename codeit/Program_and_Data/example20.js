@@ -52,7 +52,7 @@ for (let name of votes) {
     if (name in voteCounter) {
         voteCounter[name] += 1;
     } else {
-        voteCounter[name] = 0;
+        voteCounter[name] = 1;
     }
 }
 
