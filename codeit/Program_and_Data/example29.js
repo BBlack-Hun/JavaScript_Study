@@ -8,7 +8,11 @@ let caffeLatte = espresso.slice();
 caffeLatte.push('milk');
 
 // 여기에 caffeMocha와 vanillaLatte 레시피를 만들어 주세요.
+let caffeMocha = caffeLatte.slice();
+caffeMocha.push('chocolateSyrup');
 
+let vanillaLatte = caffeLatte.slice();
+vanillaLatte.push('vanillaSyrup');
 
 
 // 테스트 코드
