@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>로그인</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/earlyaccess/notosanskr.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="login-form">
+    <form>
+      <input id="id" type="text" name="email" class="text-field" placeholder="아이디">
+      <input id="passwd" type="password" name="password" class="text-field" placeholder="비밀번호">
+      <input type="submit" value="로그인" class="submit-btn">
+    </form>
+
+    <div class="links">
+      <a href="#">비밀번호를 잊어버리셨나요?</a>
+    </div>
+  </div>
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    // 기능을 구현해 주기 위해, 전체에서 작동하는 코드드와 함수를 작성해 주어야 한다.
+    $('.text-field').on('input', processButton);
+
+    function processButton() {
+      let id = $('#id').val();
+      let passwd = $('#passwd').val();
+
+      if (id == '' || passwd == '') {
+        console.log('id : ' + id);
+        $('.submit-btn').css('background-color', '#9B9B9B');
+      } else {
+        $('.submit-btn').css('background-color', '#1BBC9B');
+      }
+    };
+  </script>
+</body>
+
+</html>
