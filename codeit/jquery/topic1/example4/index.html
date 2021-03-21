@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <img id="title" src="images/logo.png">
+  
+  <div id="tap">
+    <a class="acroMenu" onclick="clickSrc('home');" style="font-weight: bold;" id="home">Home</a>
+    <a class="acroMenu" onclick="clickSrc('seoul');" id="seoul">Seoul</a>
+    <a class="acroMenu" onclick="clickSrc('tokyo');" id="tokyo">Tokyo</a>
+    <a class="acroMenu" onclick="clickSrc('paris');" id="paris">Paris</a>
+  </div>
+  
+  <img id="photo" src="images/home.png" onmouseover="mouseEnterPhoto();" onmouseout="mouseLeavePhoto();">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script>
+    // 사진을 바꿔주는 함수
+    const clickSrc = (target) => {
+      $('#photo').attr('src', `images/${target}.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#${target}`).css('font-weight', 'bold');
+    }
+
+    // 사진에 그림자
+    const mouseEnterPhoto = () => {
+      $('#photo').css('box-shadow', '5px 10px');
+    }
+
+    const mouseLeavePhoto = () => {
+      $('#photo').css('box-shadow', 'none');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <img id="title" src="images/logo.png">
+  
+  <div id="tap">
+    <a class="acroMenu" style="font-weight: bold;" id="home">Home</a>
+    <a class="acroMenu" id="seoul">Seoul</a>
+    <a class="acroMenu" id="tokyo">Tokyo</a>
+    <a class="acroMenu" id="paris">Paris</a>
+  </div>
+  
+  <img id="photo" src="images/home.png">
+  <script src="js/jquery-3.6.0.min.js"></script>
+  <script type="text/javascript">
+    let home = 'home';
+
+    $('#home').on('click', clickHome);
+    $('#seoul').on('click', clickSeoul);
+    $('#tokyo').on('click', clickTokyo);
+    $('#paris').on('click', clickParis);
+    
+    // 사진을 바꿔주는 함수
+    // function clickSrc(target) {
+    //   $('#photo').attr('src', `images/${target}.png`);
+    //   $('.acroMenu').css('font-weight', 'normal');
+    //   $(`#${target}`).css('font-weight', 'bold');
+    // }
+    function clickHome() {
+      $('#photo').attr('src', `images/home.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#home`).css('font-weight', 'bold');
+    }
+    function clickSeoul() {
+      $('#photo').attr('src', `images/seoul.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#seoul`).css('font-weight', 'bold');
+    }
+    function clickTokyo() {
+      $('#photo').attr('src', `images/tokyo.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#tokyo`).css('font-weight', 'bold');
+    }
+    function clickParis() {
+      $('#photo').attr('src', `images/paris.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#paris`).css('font-weight', 'bold');
+    }
+
+    // 사진에 그림자
+    const mouseEnterPhoto = () => {
+      $('#photo').css('box-shadow', '5px 10px');
+    }
+
+    const mouseLeavePhoto = () => {
+      $('#photo').css('box-shadow', 'none');
+    }
+    $('#photo').on('mouseenter', mouseEnterPhoto);
+    $('#photo').on('mouseleave', mouseLeavePhoto);
+
+    $(document).on('keydown', processKeyEvent);
+
+    // 키보드 이벤트 핸들링
+    function processKeyEvent(event) {
+      if (event['key'] == '1') {
+        clickHome();
+      } else if (event['key'] == '2') {
+        clickSeoul();
+      } else if (event['key'] == '3') {
+        clickTokyo();
+      } else if (event['key'] == '4') {
+        clickParis();
+      }
+    }
+  </script>
+</body>
+</html>

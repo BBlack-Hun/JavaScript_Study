@@ -9,14 +9,15 @@
   <img id="title" src="images/logo.png">
   
   <div id="tap">
+    <!-- onclick => 마우스로 눌렀을때, 다음의 함수를 실행시킨다. -->
     <a class="acroMenu" onclick="clickSrc('home');" style="font-weight: bold;" id="home">Home</a>
     <a class="acroMenu" onclick="clickSrc('seoul');" id="seoul">Seoul</a>
     <a class="acroMenu" onclick="clickSrc('tokyo');" id="tokyo">Tokyo</a>
     <a class="acroMenu" onclick="clickSrc('paris');" id="paris">Paris</a>
   </div>
   
-  <img id="photo" src="images/home.png">
-  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <img id="photo" src="images/home.png" >
+  <script src="js/jquery-3.6.0.min.js"></script>
   <script>
     // 사진을 바꿔주는 함수
     const clickSrc = (target) => {
