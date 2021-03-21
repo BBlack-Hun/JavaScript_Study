@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <img id="title" src="images/logo.png">
+  
+  <div id="tap">
+    <a class="acroMenu" onclick="clickSrc('home');" style="font-weight: bold;" id="home">Home</a>
+    <a class="acroMenu" onclick="clickSrc('seoul');" id="seoul">Seoul</a>
+    <a class="acroMenu" onclick="clickSrc('tokyo');" id="tokyo">Tokyo</a>
+    <a class="acroMenu" onclick="clickSrc('paris');" id="paris">Paris</a>
+  </div>
+  
+  <img id="photo" src="images/home.png">
+  <script>
+    // 사진을 바꿔주는 함수
+    const clickSrc = (target) => {
+      document.getElementById('photo').src = `images/${target}.png`;
+      let cnt = document.getElementsByClassName('acroMenu');
+      for (let i=0; i < cnt.length; i++) {
+        cnt[i].style.fontWeight = 'normal';
+      }
+      document.getElementById(`${target}`).style.fontWeight = 'bold';
+    }
+  </script>
+</body>
+</html>

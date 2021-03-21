@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+  <img id="title" src="images/logo.png">
+  
+  <div id="tap">
+    <a class="acroMenu" onclick="clickSrc('home');" style="font-weight: bold;" id="home">Home</a>
+    <a class="acroMenu" onclick="clickSrc('seoul');" id="seoul">Seoul</a>
+    <a class="acroMenu" onclick="clickSrc('tokyo');" id="tokyo">Tokyo</a>
+    <a class="acroMenu" onclick="clickSrc('paris');" id="paris">Paris</a>
+  </div>
+  
+  <img id="photo" src="images/home.png">
+  <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+  <script>
+    // 사진을 바꿔주는 함수
+    const clickSrc = (target) => {
+      $('#photo').attr('src', `images/${target}.png`);
+      $('.acroMenu').css('font-weight', 'normal');
+      $(`#${target}`).css('font-weight', 'bold');
+    }
+  </script>
+</body>
+</html>
