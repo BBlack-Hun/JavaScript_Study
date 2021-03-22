@@ -1,48 +1,62 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Couple Story</title>
-    <meta charset="utf-8" />
-    <link href="css/styles.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <div class="navbar">
-      <img id="logo" src="images/logo.png" width="157">
-    </div>
+<head>
+  <title>Couple Story</title>
+  <meta charset="utf-8" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
 
-    <div class="main">
-      <div class="container">
-        <!-- 만난지 며칠? -->
-        <h2>만난지 <span id="day-count">00</span>일째</h2>
+<body>
+  <div class="navbar">
+    <img id="logo" src="images/logo.png" width="157">
+  </div>
 
-        <div class="img-row">
-          <img src="images/female.png" width="148">
-          <img src="images/dot.png" width="8">
-          <img src="images/dot.png" width="8">
-          <img src="images/heart.png" width="16">
-          <img src="images/dot.png" width="8">
-          <img src="images/dot.png" width="8">
-          <img src="images/male.png" width="148">
-        </div>
+  <div class="main">
+    <div class="container">
+      <!-- 만난지 며칠? -->
+      <h2>만난지 <span id="day-count">00</span>일째</h2>
 
-        <!-- 만나기 시작한 날짜 -->
-        <div class="date-row">
-          <label for="start">시작일</label>
-          <input type="date" name="start" id="start">
-        </div>
-
-        <!-- 며칠됐는지 계산하기! -->
-        <button id="calculate">결과 보기</button>
+      <div class="img-row">
+        <img src="images/female.png" width="148">
+        <img src="images/dot.png" width="8">
+        <img src="images/dot.png" width="8">
+        <img src="images/heart.png" width="16">
+        <img src="images/dot.png" width="8">
+        <img src="images/dot.png" width="8">
+        <img src="images/male.png" width="148">
       </div>
-    </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.2.1.min.js"
-      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-      crossorigin="anonymous"></script>
-    <script>
-      // 코드를 입력하세요!
-    </script>
-  </body>
+      <!-- 만나기 시작한 날짜 -->
+      <div class="date-row">
+        <label for="start">시작일</label>
+        <input type="date" name="start" id="start">
+      </div>
+
+      <!-- 며칠됐는지 계산하기! -->
+      <button id="calculate">결과 보기</button>
+    </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+  <script>
+    $('#calculate').on('click', processCheckDay);
+
+    function processCheckDay() {
+      let day = $('#start').val();
+      let D = new Date(day);
+      console.log(D.getFullYear().toString());
+      if (D.getFullYear().toString() == 'NaN' && D.getMonth().toString() == 'NaN' && D.getDate().toString() == 'NaN') {
+        alert('시작 날짜를 입력해주세요!');
+      } else {
+        dday = new Date(day).getTime() - new Date().getTime();
+        dday = Math.round(dday / 1000 / 60 / 60 / 24, 0);
+        $('#day-count').empty();
+        $('#day-count').html(dday+1);
+      }
+    }
+  </script>
+</body>
+
 </html>
