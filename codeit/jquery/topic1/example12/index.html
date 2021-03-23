@@ -83,6 +83,7 @@
       
       function playMusic() {
         loopFile.play();
+        loopFile.currentTime = 0;
       }
       function playTone(event) {
         if (event['key'] == '1') {
