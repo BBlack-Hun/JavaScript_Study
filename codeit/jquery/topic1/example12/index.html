@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Launchpad</title>
+    <meta charset="utf-8" />
+    <link href="css/styles.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="pad">
+      <img src="images/pad.png" width="700" height="570">
+      <button id="play-btn">
+        <img src="images/play.png" width="50" height="50">
+      </button>
+      <button id="stop-btn">
+        <img src="images/stop.png" width="50" height="50">
+      </button>
+
+      <div class="cell-container">
+        <div class="cell green" id="cell1">
+          <div class="key">1</div>
+          <div class="instrument">Kick</div>
+        </div>
+
+        <div class="cell blue" id="cell2">
+          <div class="key">2</div>
+          <div class="instrument">Closed<br>Hi-hat</div>
+        </div>
+
+        <div class="cell blue" id="cell3">
+          <div class="key">3</div>
+          <div class="instrument">Open<br>Hi-hat</div>
+        </div>
+
+        <div class="cell red" id="cell4">
+          <div class="key">4</div>
+          <div class="instrument">Clap</div>
+        </div>
+
+        <div class="cell red" id="cell5">
+          <div class="key">5</div>
+          <div class="instrument">Snap</div>
+        </div>
+
+        <div class="cell blue" id="cell6">
+          <div class="key">6</div>
+          <div class="instrument">Crash</div>
+        </div>
+
+        <div class="cell green" id="cell7">
+          <div class="key">7</div>
+          <div class="instrument">Tom 1</div>
+        </div>
+
+        <div class="cell green" id="cell8">
+          <div class="key">8</div>
+          <div class="instrument">Tom 2</div>
+        </div>
+
+        <div class="cell blue" id="cell9">
+          <div class="key">9</div>
+          <div class="instrument">Tambourine</div>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script>
+      var loopFile = new Audio('./audio/loop.mp3');
+
+      var Kick = new Audio('./audio/01_kick_drum.wav');
+      var closeHiHat = new Audio('./audio/02_closed_hihat.wav');
+      var openHiHat = new Audio('./audio/03_open_hihat.wav');
+      var clap = new Audio('./audio/04_clap.wav');
+      var snap = new Audio('./audio/05_snap.wav');
+      var crash = new Audio('./audio/06_crash.wav');
+      var tom1 = new Audio('./audio/07_tom1.wav');
+      var tom2 = new Audio('./audio/08_tom2.wav');
+      var tambourine = new Audio('./audio/09_tambourine.wav');
+      
+      function playMusic() {
+        loopFile.play();
+      }
+      function playTone(event) {
+        if (event['key'] == '1') {
+          Kick.play();
+        } else if (event['key'] == '2') {
+          closeHiHat.play();
+        } else if (event['key'] == '3') {
+          openHiHat.play();
+        } else if (event['key'] == '4') {
+          clap.play();
+        } else if (event['key'] == '5') {
+          snap.play();
+        } else if (event['key'] == '6') {
+          crash.play();
+        } else if (event['key'] == '7') {
+          tom1.play();
+        } else if (event['key'] == '8') {
+          tom2.play();
+        } else if (event['key'] == '9') {
+          tambourine.play();
+        }
+      }
+
+      function stopMusic() {
+        loopFile.pause();
+      }
+
+      $('#play-btn').on('click', playMusic);
+      $(document).on('keydown', playTone);
+      $('#stop-btn').on('click', stopMusic);
+    </script>
+  </body>
+</html>
