@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+    <style>
+        #submit-btn {
+            background-color: red;
+        }
+    </style>
+</head>
+<body>
+    <button id="hello">Hello Codeit!</button>
+
+    <ul id="tod-list">
+        <li id="cleaning" class="item">청소</li>
+        <li id="coding" class="item">코딩</li>
+        <li id="homework" class="item">숙제</li>
+        <li id="movie" class="item">영화</li>
+        <li id="vitamin" class="item">비타민</li>
+        <li id="gym" class="item">헬스장</li>
+        <li id="reading" class="item">독서</li>
+    </ul>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        // 요소와 요소에 대한 동작부분
+        $('#hello').on('click', sayHello);
+
+        function sayHello() {
+            // 요소의 선택과 동작
+            alert($('hello').text());
+            // 요소의 선택, 요소에 대한 동작
+            $('#hello').css('background', '#7f8ff4');
+        }
+    </script>
+</body>
+</html>
