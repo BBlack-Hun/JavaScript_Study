@@ -21,10 +21,13 @@
     </ul>
     <script src="./js/jquery-3.6.0.min.js"></script>
     <script>
+        // 요소와 요소에 대한 동작부분
         $('#hello').on('click', sayHello);
 
         function sayHello() {
+            // 요소의 선택과 동작
             alert($('hello').text());
+            // 요소의 선택, 요소에 대한 동작
             $('#hello').css('background', '#7f8ff4');
         }
     </script>
