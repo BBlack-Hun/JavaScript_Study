@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scroll</title>
+    <style>
+        button{position:fixed; bottom:24px; right:24px; width:150px; height:36px; background:#4783fd; z-index:99}
+    </style>
+</head>
+<body>
+    <div class="top">
+        Fade away...
+    </div>
+
+    <button class="go-to-top">Go To Top</button>
+    <script src="./js/jquery-3.6.0.min.js"></script>
+    <script>
+        $(window).on('scroll', function() {
+            $(".top").css("opacity", 1 - $(window).scrollTop()
+            / $('.top').height());
+        })
+        $('.go-to-top').on('click', function() {
+            // $(window).scrollTop(0);
+            $('html, body').animate({scrollTop: 0}, 500);
+        })
+    </script>
+</body>
+</html>
