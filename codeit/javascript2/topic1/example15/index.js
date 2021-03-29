@@ -7,15 +7,23 @@ const link = item.firstElementChild;
 console.log(tomorrow.getAttributeNode('href'));
 console.log(item.getAttribute('class'));
 
-// id 속성
-console.log(tomorrow);
-console.log(toString.id);
+// elem.setAttribute('속성', '값'): 속성 추가(수정)하기
+tomorrow.setAttribute('class', 'list'); // 추가
+link.setAttribute('href', 'https://www.codeit.kr'); // 수정
 
-// class 속성
-console.log(item);
-console.log(item.className);
+// elem.removeAttribute('속성'): 속성 제거하기
+tomorrow.removeAttribute('href');
+tomorrow.removeAttribute('CLass');
 
-// href 속성
-console.log(link);
-console.log(link.href);
-console.log(tomorrow.href);
+// // id 속성
+// console.log(tomorrow);
+// console.log(toString.id);
+
+// // class 속성
+// console.log(item);
+// console.log(item.className);
+
+// // href 속성
+// console.log(link);
+// console.log(link.href);
+// console.log(tomorrow.href);
