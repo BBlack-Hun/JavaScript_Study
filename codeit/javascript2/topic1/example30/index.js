@@ -19,3 +19,12 @@ function sendMyText() {
 send.addEventListener('click', sendMyText);
 
 // 여기에 코드를 작성해 주세요.
+
+function sendMyTextByEnter(e) {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    sendMyText();
+    e.preventDefault();
+  }
+}
+
+input.addEventListener('keypress', sendMyTextByEnter);
