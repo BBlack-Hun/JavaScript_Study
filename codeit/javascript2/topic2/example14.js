@@ -44,3 +44,13 @@ const introduce = (name, birth, job) => {
 
 const myArr = ['코드잇', 2017, '프로그래밍 강사'];
 introduce(...myArr);
+
+// const numbers = [1];
+
+// const numer ...numbers;
+
+const member = ['태호', '종훈', '우재'];
+
+const newObject = { ...member };
+
+console.log(newObject);
