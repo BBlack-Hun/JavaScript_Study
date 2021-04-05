@@ -20,3 +20,7 @@ function paasChecker(score) {
 }
 
 console.log(paasChecker(75));
+
+console.log('----------------------------');
+
+// 조건 ? truthy 할때 표현식 : falsy 할때 표현식
