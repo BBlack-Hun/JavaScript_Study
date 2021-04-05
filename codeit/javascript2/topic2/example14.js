@@ -32,3 +32,15 @@ console.log(arr3);
 
 const arr4 = arr1.concat(arr2);
 console.log(arr4);
+
+// Arguments로도 활용가능!
+const introduce = (name, birth, job) => {
+  console.log('안녕하세요! 반갑습니다.');
+  console.log(`저는 ${name}입니다.`);
+  console.log(`${birth}년 생이고,`);
+  console.log(`직업은 ${job}입니다.`);
+  console.log('잘 부탁드립니다 :');
+};
+
+const myArr = ['코드잇', 2017, '프로그래밍 강사'];
+introduce(...myArr);

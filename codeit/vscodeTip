@@ -1,0 +1,50 @@
+Useful Shortcuts (Only for macOS)
+실제로 VSCode를 열고 명령어를 한 번씩 따라 해보시는 것을 추천합니다.
+
+Preferences
+cmd + ,                     # Open settings
+cmd + shift + t             # Open settings.json
+cmd + K + cmd + S           # Open keyboard shortcuts
+
+Display
+cmd + shift + e             # 탐색기 열기 (Side Bar)
+cmd + shift + d             # 디버그 열기 (Side Bar)
+cmd + shift + f             # 검색 열기 (Side Bar)
+cmd + shift + x             # Extension 열기 (Side Bar)
+cmd + b                     # Side bar 활성/비활성
+cmd + shift + u             # Output 열기 (Panels)
+ctrl + `                    # Panels 활성/비활성
+cmd + =                     # Zoom in
+cmd + -                     # Zoom out
+cmd + shift + v             # Markdown preivew
+
+Navigation
+cmd + p                     # Quick Open. 원하는 파일을 찾아서 열 수 있음.
+cmd + p -> cmd + enter      # Quick Open시 창을 분할
+cmd + shift + p             # Show all commands
+ctrl + shift + tab          # 최근에 열었던 파일들을 보여 줌.
+ctrl + g                    # 원하는 줄로 이동.
+
+Editor Management
+cmd + \                     # 활성화 된 editor 창 분할
+cmd + 1,2,..                # 분할 된 창 선택
+cmd + alt + ->              # 분할 된 창 선택
+alt + drag&drop             # 그리드 형식으로 창 분할
+cmd + w                     # 창 닫기
+
+Editing
+cmd + shift + k             # 줄 지우기
+cmd + enter                 # 바로 아래 새 줄 입력
+option + ↓(down)            # 줄 내리기
+option + ↑(up)              # 줄 올리기
+option + shift + ↓(down)    # 줄 아래에 복사
+option + shift + ↑(up)      # 줄 위에 복사
+cmd + shift + l             # 선택한 단어 모두 선택
+cmd + l                     # 줄 선택
+cmd + option + ↓(down)      # 아래에 커서 추가
+cmd + option + ↑(up)        # 위에 커서 추가
+cmd + ]                     # 들여쓰기
+cmd + [                     # 내어쓰기
+cmd + 좌, 우                 # 줄 처음, 끝으로 이동
+cmd + 상, 하                 # 파일 위, 아래로 이동
+option + shift + f          # 코드 자동 재정렬
