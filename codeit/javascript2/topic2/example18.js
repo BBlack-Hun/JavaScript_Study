@@ -14,9 +14,20 @@ const rank = ['유나', '효준', '민환', '재하', ' 규식'];
 // const ipad = rank[1]; // 유나
 // const airpods = rank[2]; // 민환
 // const coupon = rank[3]; // 재하
-const [macbook, ipad, airpods, ...coupon] = rank;
+// const [macbook, ipad, airpods, coupon] = rank;
 
-console.log(macbook);
-console.log(ipad);
-console.log(airpods);
-console.log(coupon);
+// console.log(macbook);
+// console.log(ipad);
+// console.log(airpods);
+// console.log(coupon);
+
+let macbook = '효쥰';
+let ipad = '유나';
+
+console.log('MacBook 당첨자', macbook);
+console.log('iPad 당첨자: ', ipad);
+
+[macbook, ipad] = [ipad, macbook];
+
+console.log('MacBook 당첨자:', macbook);
+console.log('iPad 당첨자:', ipad);
