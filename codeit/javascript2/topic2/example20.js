@@ -6,11 +6,22 @@ const macbook = {
   memory: '16GB',
   storage: '1TB SSD 저장 장치',
   display: '16형 Retina 디스플레이',
+  'serial-num': 'ABCDEFGHIJKL',
 };
 
 // const titile = macbook.title;
 // const price = macbook.price;
-const { title, ...rest } = macbook;
+// const { title, color} = macbook;
+// const { title: product, ...rest } = macbook;
+// const { title: product, 'serial-num': serialNum } = macbook;
 
-console.log(title);
-console.log(rest);
+// // title로 출력시 오류가 발생!
+// // console.log(title);
+// console.log(product);
+// console.log(serialNum);
+// console.log(rest);
+
+const propertyName = 'title';
+const { [propertyName]: product } = macbook;
+
+console.log(product);
