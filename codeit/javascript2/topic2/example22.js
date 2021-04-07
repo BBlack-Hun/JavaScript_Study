@@ -1,43 +1,127 @@
-// 1. Destructuring 문법을 사용해서 title, artist, year, medium 변수에 myBestArt 객체의 각 프로퍼티를 할당해 주세요.
-const myBestArt = {
-  title: '별이 빛나는 밤에',
-  artist: '빈센트 반 고흐',
-  year: 1889,
-  medium: '유화',
+// 구조 분해 (Destructuring)
+
+// function getArray() {
+//   return ['컴퓨터', '냉장고', '세탁기'];
+// }
+
+// const [el1, el2, el3] = getArray();
+
+// console.log(el1);
+// console.log(el2);
+// console.log(el3);
+
+// function printWinners(...arg) {
+//   const [macbook, ipad, airpods, ...coupon] = arg;
+
+//   console.log('이벤트 결과를 알려드립니다!');
+//   console.log(`맥북의 주인공은 '${macbook}'님 입니다.`);
+//   console.log(`아이패드의 주인공은 '${ipad}'님 입니다.`);
+//   console.log(`에어팟의 주인공은 '${airpods}'님 입니다.`);
+//   console.log('코드잇 3개월 수강권 주인공은');
+
+//   for (let user of coupon) {
+//     console.log(`'${user}'님`);
+//   }
+//   console.log(`이상 총 ${coupon.length}명 입니다.`);
+// }
+
+// printWinners('효준', '효신', '재훈', '소원', '현승', '종훈');
+
+// Destructuring을 이용한 예
+// function printWinners([macbook, ipad, airpods, ...coupon]) {
+//   console.log('이벤트 결과를 알려드립니다!');
+//   console.log(`맥북의 주인공은 '${macbook}'님 입니다.`);
+//   console.log(`아이패드의 주인공은 '${ipad}'님 입니다.`);
+//   console.log(`에어팟의 주인공은 '${airpods}'님 입니다.`);
+//   console.log('코드잇 3개월 수강권 주인공은');
+
+//   for (let user of coupon) {
+//     console.log(`'${user}'님`);
+//   }
+//   console.log(`이상 총 ${coupon.length}명 입니다.`);
+// }
+
+// const ranks = ['효준', '효신', '재훈', '소원', '현승', '종훈'];
+
+// printWinners(ranks);
+
+// function getObject() {
+//   return {
+//     name: '코드잇',
+//     birth: 2017,
+//     job: '프로그래밍 강사',
+//   };
+// }
+
+// const { name: brand, birth, job } = getObject();
+
+// console.log(brand);
+// console.log(birth);
+// console.log(job);
+
+const macbook = {
+  title: '맥북 프로 16형',
+  price: 3690000,
+  color: 'silver',
+  memory: '16GB',
+  storage: '1TB SSD 저장 장치',
+  display: '16형 Retina 디스플레이',
 };
 
-const { title, artist, year, medium } = myBestArt;
+// function pritnSummary(object) {
+//   console.log(`선택한 상품은 '${object.title}'입니다`);
+//   console.log(`색상은 '${object.color}'이며,`);
+//   console.log(`가격은 ${object.price}원 입니다.`);
+// }
 
-// 2. Destructuring 문법을 활용해서 myBestSong의 프로퍼티 중 title과 artist는 각각 songName과 singer라는 변수에, 나머지는 rest라는 변수에 객체로 할당해 주세요.
-const myBestSong = {
-  title: '무릎',
-  artist: '아이유(IU)',
-  release: '2015.10.23.',
-  lyrics: '모두 잠드는 밤에...',
-};
+// function pritnSummary(object) {
+//   const { title, color, price } = object;
+//   console.log(`선택한 상품은 '${title}'입니다`);
+//   console.log(`색상은 '${color}'이며,`);
+//   console.log(`가격은 ${price}원 입니다.`);
+// }
 
-const { title: songName, artist: singer, ...rest } = myBestSong;
-
-// 3. printMenu 함수 안에 잘못 작성된 Destructuring 코드를 수정해 주세요.
-const menu1 = { name: '아메리카노' };
-const menu2 = { name: '바닐라 라떼', ice: true };
-const menu3 = { name: '카페 모카', ice: false };
-
-function printMenu(menu) {
-  //  menu 파라미터로 전달되는 객체에 ice 프로퍼티가 없을 경우 기본값은 true여야 합니다.
-  const { name, ice = true } = menu;
-
-  console.log(`주문하신 메뉴는 '${ice ? '아이스' : '따뜻한'} ${name}'입니다.`);
+function pritnSummary({ title, color, price }) {
+  console.log(`선택한 상품은 '${title}'입니다`);
+  console.log(`색상은 '${color}'이며,`);
+  console.log(`가격은 ${price}원 입니다.`);
 }
 
-// 테스트 코드
-console.log(title);
-console.log(artist);
-console.log(year);
-console.log(medium);
-console.log(songName);
-console.log(singer);
-console.log(rest);
-printMenu(menu1);
-printMenu(menu2);
-printMenu(menu3);
+pritnSummary(macbook);
+
+// html DOM 이벤트 처리에도 사용될 수 있다.
+
+const btn = document.querySelector('#btn');
+btn.addEventListener(
+  ('click',
+  (event) => {
+    event.target.classList.toggle('checked');
+  }),
+);
+
+// Destructuring을 사용한 예
+btn.addEventListener(
+  ('click',
+  ({ target }) => {
+    target.classList.toggle('checked');
+  }),
+);
+
+// Destructuring을 사용한 예2
+btn.addEventListener(
+  ('click',
+  ({ target: { classList } }) => {
+    classList.toggle('checked');
+  }),
+);
+
+// Destructuring을 사용한 예3
+btn.addEventListener(
+  ('click',
+  ({ target }) => {
+    const { classList } = target;
+    classList.toggle('checked');
+  }),
+);
+
+// 중섭 객체 구조 분해 ( Nested Object Destructuring)
