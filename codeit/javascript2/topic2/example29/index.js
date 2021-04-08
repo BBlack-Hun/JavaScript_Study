@@ -25,17 +25,12 @@ const data = [
 // 여기에 코드를 작성해 주세요.
 data.forEach((dd, i) => {
   const { title, isClear } = dd;
+  const li = document.createElement('li');
   if (isClear) {
-    list.append(`<li class="item done">${i}</li>`);
+    li.classList.add('item', 'done');
   } else {
-    list.append(`<li class="item">${i}</li>`);
+    li.classList.add('item');
   }
+  li.textContent = `${i + 1}. ${title}`;
+  list.append(li);
 });
-
-const add = document.querySelector('.add-btn');
-
-add.addEventListener(() => {
-  list.append('<li>1111</li>');
-});
-
-console.log('hi');
