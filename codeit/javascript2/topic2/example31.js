@@ -13,6 +13,27 @@ const devices = [
   { name: 'MacBookAir', brand: 'Apple' },
 ];
 
-const apples = devices.filter((el) => el.brand === 'Apple');
+const apples = devices.filter((el, i) => {
+  console.log(i);
+  return el.brand === 'Apple';
+});
 
 console.log(apples);
+
+// 배열로 반환 (해당하는 내용이 있는 한 계속 반복)
+const myLaptop = devices.filter((el) => el.name === 'Gram');
+
+console.log(myLaptop);
+
+// 하나의 값을 반환
+const myLabtop2 = devices.find((el) => el.name === 'Gram');
+
+console.log(myLabtop2);
+
+// 가장 먼저 발견한 값을 반환하고 종료.
+const myLabtop3 = devices.find((el, i) => {
+  console.log(i);
+  return el.brand === 'Apple';
+});
+
+console.log(myLabtop3);
