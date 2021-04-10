@@ -7,7 +7,9 @@ function add(data) {
 
   const li = document.createElement('li');
   li.classList.add('item');
-  li.innerHTML = `<b>${index + 1}</b>${inputValue}<button class="del-btn" data-index="${index}">x</div>`;
+  li.innerHTML = `<b>${
+    index + 1
+  }</b>${inputValue}<button class="del-btn" data-index="${index}">x</div>`;
   list.append(li);
 
   data.push(inputValue);
@@ -27,7 +29,7 @@ function maxAlert() {
 }
 
 // 아래 코드를 수정해 주세요.
-function addMenu(data) {
+export function addMenu(data) {
   const inputValue = addInput.value;
 
   if (inputValue === '') {
