@@ -39,5 +39,5 @@ import * as module from './modules.js';
 // default export된 대상을 import 할 때는, 축약형으로 불러올 수 있다.
 import {default as modules } from './modules.js';
 
-import modules from './modules.js'
+import modules from './modules.js';
 
