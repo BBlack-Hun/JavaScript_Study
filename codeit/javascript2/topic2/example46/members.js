@@ -14,3 +14,5 @@ export const data = [
   '재하',
   '유나',
 ];
+
+export default 'codeit';

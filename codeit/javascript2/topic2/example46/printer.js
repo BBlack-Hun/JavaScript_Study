@@ -5,4 +5,5 @@ function print(value) {
   console.log(value);
 }
 
-export { title, print };
+export default { title, print };
+// {title: title, print: print}
