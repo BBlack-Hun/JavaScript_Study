@@ -1,4 +1,4 @@
-// 상속
+// 상속, Super
 
 class User {
   constructor(email, birthdate) {
@@ -25,6 +25,7 @@ class User {
 
 class PreminumUser extends User {
   constructor(email, birthdate, level) {
+    super(email, birthdate);
     this.level = level;
   }
 
@@ -40,7 +41,7 @@ const item = {
 
 const pUser1 = new PreminumUser('chris123@google.com', '1992-03-21', 5);
 console.log(pUser1.email);
-console.log(puser1.birthdate);
+console.log(pUser1.birthdate);
 console.log(pUser1.level);
 pUser1.buy(item);
 pUser1.streamMusicForFree();
