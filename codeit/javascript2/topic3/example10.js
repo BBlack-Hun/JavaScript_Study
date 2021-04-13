@@ -1,4 +1,4 @@
-// 캡슐화
+// 상속
 
 class User {
   constructor(email, birthdate) {
@@ -23,13 +23,24 @@ class User {
   }
 }
 
+class PreminumUser extends User {
+  constructor(email, birthdate, level) {
+    this.level = level;
+  }
+
+  streamMusicForFree() {
+    console.log(`Free music streaming for ${this.email}`);
+  }
+}
+
 const item = {
   name: '스웨터',
   price: 30000,
 };
-const user1 = new User('chris123@google.com', '1992-03-21');
-user1.email = 'chris_robert@google.com';
 
-console.log(user1.email);
-console.log(user1.birthdate);
-user1.buy(item);
+const pUser1 = new PreminumUser('chris123@google.com', '1992-03-21', 5);
+console.log(pUser1.email);
+console.log(puser1.birthdate);
+console.log(pUser1.level);
+pUser1.buy(item);
+pUser1.streamMusicForFree();
