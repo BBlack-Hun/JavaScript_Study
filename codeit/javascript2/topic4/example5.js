@@ -24,7 +24,7 @@ const member = {
 fetch('https://learn.codeit.kr/api/members/2', {
   method: 'PUT',
   // Stringify로 데이터를 String 타입으로 변환시켜 줘야 한다.
-  body: JSONP.stringify(member),
+  body: JSON.stringify(member),
 })
   .then((response) => response.text())
   .then((result) => {
