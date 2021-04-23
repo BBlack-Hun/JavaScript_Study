@@ -14,8 +14,8 @@ let server = http.createServer((req, res) => {
     res.end(`<h1>${users}</h1>`);
   } else if (req.url.split('/')[1] === 'users') {
     //url : /users/1, /users/2, ..
-    let userIdx = req.url.split('/')[2];
-    let userName = users[userIdx - 1];
+    const userIdx = req.url.split('/')[2];
+    const userName = users[userIdx - 1];
     res.end(`<h1>${userName}</h1>`);
   } else {
     res.end('<h1>Page Not Available</h1>');
